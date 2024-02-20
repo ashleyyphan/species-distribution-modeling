@@ -5,7 +5,7 @@
 # create a map to display the species occurrence points
 
 #list of packages
-packages<-c("tidyverse", "rgbif", "usethis", "CoordinateCleaner", "leaflet", "mapview")
+packages<-c("tidyverse", "rgbif", "usethis", "CoordinateCleaner", "leaflet", "mapview", "webshot2")
 
 # install packages not yet installed
 installed_packages<-packages %in% rownames(installed.packages())
@@ -76,7 +76,7 @@ fData <-fData %>%
 #   cc_sea(lon= "decimalLongitude", lat= "decimalLatitude") %>%
 #   distinct(decimalLongitude, decimalLatitude, speciesKey, datasetKey, .keep_all = TRUE)
 
-
+write.csv(fData, "data/cleanedData.csv")
 
 
 
